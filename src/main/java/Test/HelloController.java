@@ -1,5 +1,7 @@
 package Test;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -8,8 +10,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HelloController {
 
     @RequestMapping(value = "/Employee", method = RequestMethod.GET, produces = "application/json")
-    public Employee index() {
-        return new Employee(1, "Kyle", "Developer");
+    public String index() {
+
+        try {
+            ObjectMapper objectMapper = new ObjectMapper();
+            Employee employee = new Employee(1, "Kyle", "Developer");
+            return objectMapper.writeValueAsString(employee);
+        } catch(JsonProcessingException e) {
+            e.printStackTrace();
+            return e.getMessage();
+        }
+
     }
 
 }
