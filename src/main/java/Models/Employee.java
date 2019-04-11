@@ -1,4 +1,4 @@
-package Test;
+package Models;
 
 public class Employee {
 

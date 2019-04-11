@@ -1,5 +1,6 @@
-package Test;
+package Rest;
 
+import Models.Employee;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -7,9 +8,9 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @RestController
-public class HelloController {
+public class UserEntrypoint {
 
-    @RequestMapping(value = "/Employee", method = RequestMethod.GET, produces = "application/json")
+    @RequestMapping(value = "/User", method = RequestMethod.GET, produces = "application/json")
     public String index() {
 
         try {
