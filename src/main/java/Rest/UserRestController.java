@@ -3,15 +3,18 @@ package Rest;
 import Models.Employee;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @RestController
-public class UserEntrypoint {
+public class UserRestController {
 
-    @RequestMapping(value = "/User", method = RequestMethod.GET, produces = "application/json")
-    public String index() {
+    @RequestMapping(value = "/getUser", method = RequestMethod.GET, produces = "application/json")
+    public String getUser() {
+
+        System.out.println("User Requested");
 
         try {
             ObjectMapper objectMapper = new ObjectMapper();
