@@ -25,12 +25,19 @@ repositories {
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
+dependencyManagement {
+    imports {
+        mavenBom 'com.amazonaws:aws-java-sdk-bom:1.11.228'
+    }
+}
+
 dependencies {
     compile(
             'org.springframework.boot:spring-boot-starter-web',
             'com.fasterxml.jackson.core:jackson-core:2.9.8',
             'com.fasterxml.jackson.core:jackson-databind:2.9.8',
-            'com.fasterxml.jackson.core:jackson-annotations:2.9.8'
+            'com.fasterxml.jackson.core:jackson-annotations:2.9.8',
+            'com.amazonaws:aws-java-sdk-s3'
     )
     testCompile("junit:junit")
 }
