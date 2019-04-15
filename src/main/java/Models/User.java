@@ -1,39 +1,57 @@
 package Models;
 
-public class Employee {
+public class User {
 
-    private int id;
-    private String name;
-    private String role;
+    private String id;
+    private String firstName;
+    private String lastName;
+    private String username;
+    private String password;
 
-    public Employee(int id, String name, String role) {
+    public User() {}
+
+    public User(String id, String firstName, String lastName, String username, String password) {
         this.id = id;
-        this.name = name;
-        this.role = role;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.username = username;
+        this.password = password;
     }
 
-    public int getId() {
+    public String getId() {
         return this.id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public String getName() {
-        return this.name;
+    public String getFirstName() { return this.firstName; }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getLastName() { return this.lastName; }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public String getRole() {
-        return this.role;
+    public String getUsername() {
+        return this.username;
     }
 
-    public void setRole(String role) {
-        this.role = role;
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return this.password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
 }

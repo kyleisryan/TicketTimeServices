@@ -27,7 +27,7 @@ targetCompatibility = 1.8
 
 dependencyManagement {
     imports {
-        mavenBom 'com.amazonaws:aws-java-sdk-bom:1.11.228'
+        mavenBom 'com.amazonaws:aws-java-sdk-bom:1.11.534'
     }
 }
 
@@ -36,8 +36,10 @@ dependencies {
             'org.springframework.boot:spring-boot-starter-web',
             'com.fasterxml.jackson.core:jackson-core:2.9.8',
             'com.fasterxml.jackson.core:jackson-databind:2.9.8',
-            'com.fasterxml.jackson.core:jackson-annotations:2.9.8',
-            'com.amazonaws:aws-java-sdk-s3'
+            'com.fasterxml.jackson.core:jackson-annotations:2.9.8'
     )
+    compile group: 'com.amazonaws', name: 'com.amazonaws:aws-java-sdk-s3', version: '1.11.534'
+    compile group: 'com.amazonaws', name: 'aws-java-sdk-dynamodb', version: '1.11.534'
+
     testCompile("junit:junit")
 }

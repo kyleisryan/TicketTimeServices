@@ -1,9 +1,10 @@
 package Rest;
 
-import Models.Employee;
+import Data.UserRepositoryService;
+import Models.User;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.springframework.context.annotation.Bean;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,15 +12,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RestController
 public class UserRestController {
 
-    @RequestMapping(value = "/getUser", method = RequestMethod.GET, produces = "application/json")
-    public String getUser() {
+    @RequestMapping(value = "/getUser/{uID}", method = RequestMethod.GET, produces = "application/json")
+    public String getUserWithID(@PathVariable("uID") String userID) {
 
-        System.out.println("User Requested");
+        UserRepositoryService userService = new UserRepositoryService();
 
         try {
+            User user = userService.getUser(userID);
             ObjectMapper objectMapper = new ObjectMapper();
-            Employee employee = new Employee(1, "Kyle", "Developer");
-            return objectMapper.writeValueAsString(employee);
+
+            return objectMapper.writeValueAsString(user);
         } catch(JsonProcessingException e) {
             e.printStackTrace();
             return e.getMessage();

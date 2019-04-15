@@ -3,9 +3,7 @@ import java.util.Date;
 
 public class Ticket {
 
-    public Ticket(){
-
-    }
+    public Ticket(){}
 
     public Ticket(int ticketID, Date openDate, String name, String contactInfo, String description, int employeeID,
                   int impact, String location, String resolution, int scope, int severity, String status){
