@@ -15,12 +15,11 @@ public class UserRestController {
     @RequestMapping(value = "/getUser/{uID}", method = RequestMethod.GET, produces = "application/json")
     public String getUserWithID(@PathVariable("uID") String userID) {
 
-        UserRepositoryService userService = new UserRepositoryService();
+        UserRepositoryService userRepo = new UserRepositoryService();
 
         try {
-            User user = userService.getUser(userID);
+            User user = userRepo.getUser(userID);
             ObjectMapper objectMapper = new ObjectMapper();
-
             return objectMapper.writeValueAsString(user);
         } catch(JsonProcessingException e) {
             e.printStackTrace();

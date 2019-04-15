@@ -1,18 +1,40 @@
 package Models;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Map;
 
 public class Ticket {
 
+    private String ticketID;
+    private Date openDate;
+    private Date closeDate;
+    private String customerName;
+    private String customerEmail;
+    private String customerPhoneNumber;
+    private String fullDescription;
+    private String shortDescription;
+    private String employeeID;
+    private int impact;
+    private String location;
+    private String resolution;
+    private int scope;
+    private int severity;
+    private String status;
+
     public Ticket(){}
 
-    public Ticket(int ticketID, Date openDate, String name, String contactInfo, String description, int employeeID,
-                  int impact, String location, String resolution, int scope, int severity, String status){
+    public Ticket(String ticketID, Date openDate, Date closeDate, String customerName, String customerEmail, String phoneNumber,
+                  String shortDescription, String fullDescription, String employeeID, int impact, String location, String resolution,
+                  int scope, int severity, String status) {
 
         this.ticketID = ticketID;
         this.openDate = openDate;
-        this.name = name;
-        this.contactInfo = contactInfo;
-        this.description = description;
+        this.closeDate = closeDate;
+        this.customerName = customerName;
+        this.customerEmail = customerEmail;
+        this.customerPhoneNumber = phoneNumber;
+        this.fullDescription = fullDescription;
+        this.shortDescription = shortDescription;
         this.employeeID = employeeID;
         this.impact = impact;
         this.location = location;
@@ -22,64 +44,69 @@ public class Ticket {
         this.status = status;
     }
 
-    private int ticketID;
-    private Date openDate;
-    private String name;
-    private String contactInfo;
-    private String description;
-    private int employeeID;
-    private int impact;
-    private String location;
-    private String resolution;
-    private int scope;
-    private int severity;
-    private String status;
+    public String getTicketID() { return this.ticketID; }
 
-    public int getTicketID() {
-        return ticketID;
-    }
-
-    public void setTicketID(int ticketID) {
+    public void setTicketID(String ticketID) {
         this.ticketID = ticketID;
     }
 
     public Date getOpenDate() {
-        return openDate;
+        return this.openDate;
     }
 
     public void setOpenDate(Date openDate) {
         this.openDate = openDate;
     }
 
-    public String getName() {
-        return name;
+    public Date getCloseDate() { return this.closeDate; }
+
+    public void setCloseDate(Date closeDate) { this.closeDate = closeDate; }
+
+    public String getCustomerName() {
+        return this.customerName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
     }
 
-    public String getContactInfo() {
-        return contactInfo;
+    public String getCustomerEmail() {
+        return this.customerEmail;
     }
 
-    public void setContactInfo(String contactInfo) {
-        this.contactInfo = contactInfo;
+    public void setCustomerEmail(String customerEmail) {
+        this.customerEmail = customerEmail;
     }
 
-    public String getDescription() {
-        return description;
+    public String getCustomerPhoneNumber() {
+        return this.customerPhoneNumber;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setCustomerPhoneNumber(String customerPhoneNumber) {
+        this.customerPhoneNumber = customerPhoneNumber;
     }
 
-    public int getEmployeeID() {
+    public String getFullDescription() {
+        return this.fullDescription;
+    }
+
+    public void setFullDescription(String fullDescription) {
+        this.fullDescription = fullDescription;
+    }
+
+    public String getShortDescription() {
+        return this.shortDescription;
+    }
+
+    public void setShortDescription(String shortDescription) {
+        this.shortDescription = shortDescription;
+    }
+
+    public String getEmployeeID() {
         return employeeID;
     }
 
-    public void setEmployeeID(int employeeID) {
+    public void setEmployeeID(String employeeID) {
         this.employeeID = employeeID;
     }
 
@@ -130,4 +157,5 @@ public class Ticket {
     public void setStatus(String status) {
         this.status = status;
     }
+
 }

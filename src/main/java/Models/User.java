@@ -1,5 +1,7 @@
 package Models;
 
+import java.util.Map;
+
 public class User {
 
     private String id;
