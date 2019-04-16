@@ -6,18 +6,20 @@ import java.util.Map;
 
 public class UserServices extends AbstractService implements ServiceInterface {
 
-    private int userIDCounter;
+    private String userIDCounter;
 
     public UserServices() {
         initCounter();
     }
 
     private void initCounter() {
-        userIDCounter = 0; //Replace w/ db call for most recent ticket #
+        userIDCounter = getNewID(); //Replace w/ db call for most recent ticket #
     }
 
-    public int createID() {
-        return userIDCounter++;
+    public String getNewID() {
+        //instantiate repo
+        //return repo.getMostRecentUserID();
+        return "u" + 1;
     }
 
     public static User mapToUser(Map<String, Object> map) {

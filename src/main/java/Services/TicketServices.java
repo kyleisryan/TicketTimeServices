@@ -16,8 +16,8 @@ public class TicketServices extends AbstractService implements ServiceInterface{
         ticketIDCounter = 0; //Replace w/ db call for most recent ticket #
     }
 
-    public int createID() {
-        return ticketIDCounter++;
+    public String getNewID() {
+        return "t" + ticketIDCounter++;
     }
 
     public static Ticket mapToTicket(Map<String, Object> map) {

@@ -1,10 +1,8 @@
 package Models;
 
-import java.util.Map;
-
 public class User {
 
-    private String id;
+    private String userID;
     private String firstName;
     private String lastName;
     private String username;
@@ -13,7 +11,7 @@ public class User {
     public User() {}
 
     public User(String id, String firstName, String lastName, String username, String password) {
-        this.id = id;
+        this.userID = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.username = username;
@@ -21,11 +19,11 @@ public class User {
     }
 
     public String getId() {
-        return this.id;
+        return this.userID;
     }
 
     public void setId(String id) {
-        this.id = id;
+        this.userID = id;
     }
 
     public String getFirstName() { return this.firstName; }
